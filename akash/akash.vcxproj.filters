@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="http">
+      <UniqueIdentifier>{1d6f3982-ce64-4ab5-a6c6-382b15bc7dbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ldap">
+      <UniqueIdentifier>{b871a453-5a3a-4a89-9963-b311ef120be2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="security">
+      <UniqueIdentifier>{147dc3d1-a18e-4c37-a3c5-c94db0aec091}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="socket">
+      <UniqueIdentifier>{61ec732b-17a6-4d8b-bd10-a026fbed5ee2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tls">
+      <UniqueIdentifier>{26a0ec74-4f84-44a0-8981-f9e34bd0886a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="security\cert">
+      <UniqueIdentifier>{a2c2d468-5213-44c9-8134-4fb00875c639}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="security\crypto">
+      <UniqueIdentifier>{643adf53-ce35-42a6-b1a0-905e8a606d8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="security\digest">
+      <UniqueIdentifier>{c304e4f2-0322-4bfe-a66a-121d90f36215}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="socket\win">
+      <UniqueIdentifier>{3f7c5242-39d5-45f6-aa5e-9f36c816f350}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tls\extensions">
+      <UniqueIdentifier>{55bf071b-0359-4f02-ada5-c5f383e893fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tls\handshakes">
+      <UniqueIdentifier>{681ae297-49df-4467-bc97-6a0cd66848df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="security\big_integer">
+      <UniqueIdentifier>{1c3eea98-d84d-4757-9a1e-b40fd6af0574}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="http\http_client.cpp">
+      <Filter>http</Filter>
+    </ClCompile>
+    <ClCompile Include="ldap\ldap_matcher.cpp">
+      <Filter>ldap</Filter>
+    </ClCompile>
+    <ClCompile Include="security\cert\asn1_reader.cpp">
+      <Filter>security\cert</Filter>
+    </ClCompile>
+    <ClCompile Include="security\cert\cert_path_validator.cpp">
+      <Filter>security\cert</Filter>
+    </ClCompile>
+    <ClCompile Include="security\cert\x509.cpp">
+      <Filter>security\cert</Filter>
+    </ClCompile>
+    <ClCompile Include="security\cert\x509_oid.cpp">
+      <Filter>security\cert</Filter>
+    </ClCompile>
+    <ClCompile Include="security\cert\x509_parser.cpp">
+      <Filter>security\cert</Filter>
+    </ClCompile>
+    <ClCompile Include="security\crypto\aead.cpp">
+      <Filter>security\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="security\crypto\aes.cpp">
+      <Filter>security\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="security\crypto\ecdp.cpp">
+      <Filter>security\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="security\crypto\rsa.cpp">
+      <Filter>security\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="security\digest\hkdf.cpp">
+      <Filter>security\digest</Filter>
+    </ClCompile>
+    <ClCompile Include="security\digest\hmac.cpp">
+      <Filter>security\digest</Filter>
+    </ClCompile>
+    <ClCompile Include="security\digest\md5.cpp">
+      <Filter>security\digest</Filter>
+    </ClCompile>
+    <ClCompile Include="security\digest\sha1.cpp">
+      <Filter>security\digest</Filter>
+    </ClCompile>
+    <ClCompile Include="security\digest\sha224.cpp">
+      <Filter>security\digest</Filter>
+    </ClCompile>
+    <ClCompile Include="security\digest\sha256.cpp">
+      <Filter>security\digest</Filter>
+    </ClCompile>
+    <ClCompile Include="security\digest\sha384.cpp">
+      <Filter>security\digest</Filter>
+    </ClCompile>
+    <ClCompile Include="security\digest\sha512.cpp">
+      <Filter>security\digest</Filter>
+    </ClCompile>
+    <ClCompile Include="security\digest\usha.cpp">
+      <Filter>security\digest</Filter>
+    </ClCompile>
+    <ClCompile Include="socket\win\socket_win.cpp">
+      <Filter>socket\win</Filter>
+    </ClCompile>
+    <ClCompile Include="socket\socket.cpp">
+      <Filter>socket</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\tls.cpp">
+      <Filter>tls</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\tls_common.cpp">
+      <Filter>tls</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\tls_key_schedule.cpp">
+      <Filter>tls</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\tls_record_layer.cpp">
+      <Filter>tls</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\extensions\tls_ext.cpp">
+      <Filter>tls\extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\extensions\tls_ext_key_share.cpp">
+      <Filter>tls\extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\extensions\tls_ext_server_name.cpp">
+      <Filter>tls\extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\extensions\tls_ext_sign_algos.cpp">
+      <Filter>tls\extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\extensions\tls_ext_sp_groups.cpp">
+      <Filter>tls\extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\extensions\tls_ext_sp_vers.cpp">
+      <Filter>tls\extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\handshakes\tls_hs.cpp">
+      <Filter>tls\handshakes</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\handshakes\tls_hs_certificate.cpp">
+      <Filter>tls\handshakes</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\handshakes\tls_hs_client_hello.cpp">
+      <Filter>tls\handshakes</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\handshakes\tls_hs_encrypted_exts.cpp">
+      <Filter>tls\handshakes</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\handshakes\tls_hs_finished.cpp">
+      <Filter>tls\handshakes</Filter>
+    </ClCompile>
+    <ClCompile Include="tls\handshakes\tls_hs_server_hello.cpp">
+      <Filter>tls\handshakes</Filter>
+    </ClCompile>
+    <ClCompile Include="security\big_integer\big_integer.cpp">
+      <Filter>security\big_integer</Filter>
+    </ClCompile>
+    <ClCompile Include="security\big_integer\byte_string.cpp">
+      <Filter>security\big_integer</Filter>
+    </ClCompile>
+    <ClCompile Include="security\big_integer\int_array.cpp">
+      <Filter>security\big_integer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="http\http_client.h">
+      <Filter>http</Filter>
+    </ClInclude>
+    <ClInclude Include="ldap\ldap_matcher.h">
+      <Filter>ldap</Filter>
+    </ClInclude>
+    <ClInclude Include="security\cert\asn1_reader.h">
+      <Filter>security\cert</Filter>
+    </ClInclude>
+    <ClInclude Include="security\cert\cert_path_validator.h">
+      <Filter>security\cert</Filter>
+    </ClInclude>
+    <ClInclude Include="security\cert\x509.h">
+      <Filter>security\cert</Filter>
+    </ClInclude>
+    <ClInclude Include="security\cert\x509_oid.h">
+      <Filter>security\cert</Filter>
+    </ClInclude>
+    <ClInclude Include="security\cert\x509_parser.h">
+      <Filter>security\cert</Filter>
+    </ClInclude>
+    <ClInclude Include="security\crypto\aead.h">
+      <Filter>security\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="security\crypto\aes.h">
+      <Filter>security\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="security\crypto\ecdp.h">
+      <Filter>security\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="security\crypto\rsa.h">
+      <Filter>security\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="security\digest\md5.h">
+      <Filter>security\digest</Filter>
+    </ClInclude>
+    <ClInclude Include="security\digest\sha.h">
+      <Filter>security\digest</Filter>
+    </ClInclude>
+    <ClInclude Include="security\digest\sha_private.h">
+      <Filter>security\digest</Filter>
+    </ClInclude>
+    <ClInclude Include="socket\win\socket_win.h">
+      <Filter>socket\win</Filter>
+    </ClInclude>
+    <ClInclude Include="socket\socket.h">
+      <Filter>socket</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\tls.h">
+      <Filter>tls</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\tls_common.h">
+      <Filter>tls</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\tls_key_schedule.h">
+      <Filter>tls</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\tls_record_layer.h">
+      <Filter>tls</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\extensions\tls_ext.h">
+      <Filter>tls\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\extensions\tls_ext_key_share.h">
+      <Filter>tls\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\extensions\tls_ext_server_name.h">
+      <Filter>tls\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\extensions\tls_ext_sign_algos.h">
+      <Filter>tls\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\extensions\tls_ext_sp_groups.h">
+      <Filter>tls\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\extensions\tls_ext_sp_vers.h">
+      <Filter>tls\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\handshakes\tls_hs.h">
+      <Filter>tls\handshakes</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\handshakes\tls_hs_certificate.h">
+      <Filter>tls\handshakes</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\handshakes\tls_hs_client_hello.h">
+      <Filter>tls\handshakes</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\handshakes\tls_hs_encrypted_exts.h">
+      <Filter>tls\handshakes</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\handshakes\tls_hs_finished.h">
+      <Filter>tls\handshakes</Filter>
+    </ClInclude>
+    <ClInclude Include="tls\handshakes\tls_hs_server_hello.h">
+      <Filter>tls\handshakes</Filter>
+    </ClInclude>
+    <ClInclude Include="security\big_integer\big_integer.h">
+      <Filter>security\big_integer</Filter>
+    </ClInclude>
+    <ClInclude Include="security\big_integer\byte_string.h">
+      <Filter>security\big_integer</Filter>
+    </ClInclude>
+    <ClInclude Include="security\big_integer\int_array.h">
+      <Filter>security\big_integer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

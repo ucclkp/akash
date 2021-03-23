@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="security">
+      <UniqueIdentifier>{d70e7767-77f9-4393-89ef-95b5d0ef2780}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="security\cert_unit_test.cpp">
+      <Filter>security</Filter>
+    </ClCompile>
+    <ClCompile Include="security\crypto_unit_test.cpp">
+      <Filter>security</Filter>
+    </ClCompile>
+    <ClCompile Include="security\digest_unit_test.cpp">
+      <Filter>security</Filter>
+    </ClCompile>
+    <ClCompile Include="security\big_integer_unit_test.cpp">
+      <Filter>security</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="security\cert_unit_test.h">
+      <Filter>security</Filter>
+    </ClInclude>
+    <ClInclude Include="security\crypto_unit_test.h">
+      <Filter>security</Filter>
+    </ClInclude>
+    <ClInclude Include="security\digest_unit_test.h">
+      <Filter>security</Filter>
+    </ClInclude>
+    <ClInclude Include="security\big_integer_unit_test.h">
+      <Filter>security</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

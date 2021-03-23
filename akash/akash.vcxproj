@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{D07D6735-A80B-4265-AA87-DA4212C0346D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>akash</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\lib\</OutDir>
+    <IntDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\lib\</OutDir>
+    <IntDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\lib\</OutDir>
+    <IntDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\lib\</OutDir>
+    <IntDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..;$(SolutionDir)utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..;$(SolutionDir)utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..;$(SolutionDir)utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..;$(SolutionDir)utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="http\http_client.cpp" />
+    <ClCompile Include="ldap\ldap_matcher.cpp" />
+    <ClCompile Include="security\big_integer\big_integer.cpp" />
+    <ClCompile Include="security\big_integer\byte_string.cpp" />
+    <ClCompile Include="security\big_integer\int_array.cpp" />
+    <ClCompile Include="security\cert\asn1_reader.cpp" />
+    <ClCompile Include="security\cert\cert_path_validator.cpp" />
+    <ClCompile Include="security\cert\x509.cpp" />
+    <ClCompile Include="security\cert\x509_oid.cpp" />
+    <ClCompile Include="security\cert\x509_parser.cpp" />
+    <ClCompile Include="security\crypto\aead.cpp" />
+    <ClCompile Include="security\crypto\aes.cpp" />
+    <ClCompile Include="security\crypto\ecdp.cpp" />
+    <ClCompile Include="security\crypto\rsa.cpp" />
+    <ClCompile Include="security\digest\hkdf.cpp" />
+    <ClCompile Include="security\digest\hmac.cpp" />
+    <ClCompile Include="security\digest\md5.cpp" />
+    <ClCompile Include="security\digest\sha1.cpp" />
+    <ClCompile Include="security\digest\sha224.cpp" />
+    <ClCompile Include="security\digest\sha256.cpp" />
+    <ClCompile Include="security\digest\sha384.cpp" />
+    <ClCompile Include="security\digest\sha512.cpp" />
+    <ClCompile Include="security\digest\usha.cpp" />
+    <ClCompile Include="socket\socket.cpp" />
+    <ClCompile Include="socket\win\socket_win.cpp" />
+    <ClCompile Include="tls\extensions\tls_ext.cpp" />
+    <ClCompile Include="tls\extensions\tls_ext_key_share.cpp" />
+    <ClCompile Include="tls\extensions\tls_ext_server_name.cpp" />
+    <ClCompile Include="tls\extensions\tls_ext_sign_algos.cpp" />
+    <ClCompile Include="tls\extensions\tls_ext_sp_groups.cpp" />
+    <ClCompile Include="tls\extensions\tls_ext_sp_vers.cpp" />
+    <ClCompile Include="tls\handshakes\tls_hs.cpp" />
+    <ClCompile Include="tls\handshakes\tls_hs_certificate.cpp" />
+    <ClCompile Include="tls\handshakes\tls_hs_client_hello.cpp" />
+    <ClCompile Include="tls\handshakes\tls_hs_encrypted_exts.cpp" />
+    <ClCompile Include="tls\handshakes\tls_hs_finished.cpp" />
+    <ClCompile Include="tls\handshakes\tls_hs_server_hello.cpp" />
+    <ClCompile Include="tls\tls.cpp" />
+    <ClCompile Include="tls\tls_common.cpp" />
+    <ClCompile Include="tls\tls_key_schedule.cpp" />
+    <ClCompile Include="tls\tls_record_layer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="http\http_client.h" />
+    <ClInclude Include="ldap\ldap_matcher.h" />
+    <ClInclude Include="security\big_integer\big_integer.h" />
+    <ClInclude Include="security\big_integer\byte_string.h" />
+    <ClInclude Include="security\big_integer\int_array.h" />
+    <ClInclude Include="security\cert\asn1_reader.h" />
+    <ClInclude Include="security\cert\cert_path_validator.h" />
+    <ClInclude Include="security\cert\x509.h" />
+    <ClInclude Include="security\cert\x509_oid.h" />
+    <ClInclude Include="security\cert\x509_parser.h" />
+    <ClInclude Include="security\crypto\aead.h" />
+    <ClInclude Include="security\crypto\aes.h" />
+    <ClInclude Include="security\crypto\ecdp.h" />
+    <ClInclude Include="security\crypto\rsa.h" />
+    <ClInclude Include="security\digest\md5.h" />
+    <ClInclude Include="security\digest\sha.h" />
+    <ClInclude Include="security\digest\sha_private.h" />
+    <ClInclude Include="socket\socket.h" />
+    <ClInclude Include="socket\win\socket_win.h" />
+    <ClInclude Include="tls\extensions\tls_ext.h" />
+    <ClInclude Include="tls\extensions\tls_ext_key_share.h" />
+    <ClInclude Include="tls\extensions\tls_ext_server_name.h" />
+    <ClInclude Include="tls\extensions\tls_ext_sign_algos.h" />
+    <ClInclude Include="tls\extensions\tls_ext_sp_groups.h" />
+    <ClInclude Include="tls\extensions\tls_ext_sp_vers.h" />
+    <ClInclude Include="tls\handshakes\tls_hs.h" />
+    <ClInclude Include="tls\handshakes\tls_hs_certificate.h" />
+    <ClInclude Include="tls\handshakes\tls_hs_client_hello.h" />
+    <ClInclude Include="tls\handshakes\tls_hs_encrypted_exts.h" />
+    <ClInclude Include="tls\handshakes\tls_hs_finished.h" />
+    <ClInclude Include="tls\handshakes\tls_hs_server_hello.h" />
+    <ClInclude Include="tls\tls.h" />
+    <ClInclude Include="tls\tls_common.h" />
+    <ClInclude Include="tls\tls_key_schedule.h" />
+    <ClInclude Include="tls\tls_record_layer.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
