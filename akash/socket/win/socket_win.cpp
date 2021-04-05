@@ -9,7 +9,7 @@
 #include <WS2tcpip.h>
 
 #include "utils/log.h"
-#include "utils/convert.h"
+#include "utils/number.hpp"
 
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -148,7 +148,7 @@ namespace win {
             return false;
         }
 
-        auto bytes_sent = ::send(socket_, buf.data(), utl::STLCInt(buf.length()), 0);
+        auto bytes_sent = ::send(socket_, buf.data(), utl::num_cast<int>(buf.length()), 0);
         if (bytes_sent == SOCKET_ERROR) {
             LOG(Log::ERR) << "Failed to send: " << WSAGetLastError();
             return false;

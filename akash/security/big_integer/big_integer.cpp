@@ -3,7 +3,7 @@
 #include <random>
 
 #include "utils/log.h"
-#include "utils/convert.h"
+#include "utils/number.hpp"
 
 #define MP_WARRAY  65536
 
@@ -139,7 +139,7 @@ namespace utl {
     }
 
     BigInteger BigInteger::fromBytesLE(const std::string& bytes) {
-        int byte_cnt = STLCInt(bytes.size());
+        int byte_cnt = num_cast<int>(bytes.size());
         int total_bits = byte_cnt * 8;
         int total_base = (total_bits + kBaseBitCount - 1) / kBaseBitCount;
 

@@ -35,8 +35,8 @@ int main(int argc, wchar_t* argv[]) {
     //akash::test::TEST_MD5();
     //akash::test::TEST_SHA();
 
-    /*akash::tls::TLS tls_client;
-      tls_client.testHandshake();*/
+    akash::tls::TLS tls_client;
+    tls_client.testHandshake();
 
     if (akash::isSocketInitialized()) {
         akash::unInitializeSocket();
