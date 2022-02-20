@@ -6,7 +6,7 @@
 
 #include "akash/http/http_client.h"
 
-#include "utils/convert.h"
+#include "utils/strings/int_conv.hpp"
 #include "utils/log.h"
 
 #include "akash/socket/socket.h"
@@ -79,7 +79,7 @@ namespace akash {
             }
             host = url_tmp.substr(0, index);
             auto port_str = url_tmp.substr(index + 1);
-            if (!utl::stringToNumber(port_str, &port)) {
+            if (!utl::stoi(port_str, &port)) {
                 return false;
             }
         } else {

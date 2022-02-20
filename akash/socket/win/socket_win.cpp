@@ -9,7 +9,7 @@
 #include <WS2tcpip.h>
 
 #include "utils/log.h"
-#include "utils/number.hpp"
+#include "utils/numbers.hpp"
 
 #pragma comment(lib, "Ws2_32.lib")
 

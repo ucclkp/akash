@@ -57,11 +57,11 @@ namespace tls {
     bool TLSRecordLayer::recvFragment(TLSPlaintext* text) {
         std::string rec_header;
         if (!socket_client_->recv(5, &rec_header)) {
-            DCHECK(false);
+            ubassert(false);
             return false;
         }
         if (rec_header.length() < 5) {
-            DCHECK(false);
+            ubassert(false);
             return false;
         }
 
@@ -75,11 +75,11 @@ namespace tls {
 
         std::string out;
         if (!socket_client_->recv(text->length, &out)) {
-            DCHECK(false);
+            ubassert(false);
             return false;
         }
         if (out.length() < text->length) {
-            DCHECK(false);
+            ubassert(false);
             return false;
         }
 
@@ -114,7 +114,7 @@ namespace tls {
                 reinterpret_cast<const uint8_t*>(tag.data()), 16,
                 reinterpret_cast<uint8_t*>(&*result.begin())))
             {
-                DCHECK(false);
+                ubassert(false);
                 return false;
             }
             ++sequence_num_r_;
@@ -122,7 +122,7 @@ namespace tls {
             char ch = 0;
             auto idx = result.find_last_not_of(ch);
             if (idx == std::string::npos) {
-                DCHECK(false);
+                ubassert(false);
                 return false;
             }
 

@@ -6,7 +6,7 @@
 
 #include "akash/ldap/ldap_matcher.h"
 
-#include "utils/unicode.h"
+#include "utils/strings/unicode_conv.h"
 
 
 namespace akash {
@@ -33,7 +33,7 @@ namespace ldap {
         // 2.1 Transcode
         // 当前只支持 UTF8String 和 PrintableString，因此这一步不需要做任何事
         std::u32string u_str;
-        if (!utl::Unicode::UTF8ToUTF32(org, &u_str)) {
+        if (!utl::utf8_to_utf32(org, &u_str)) {
             return false;
         }
 
@@ -103,7 +103,7 @@ namespace ldap {
         // 当前只关心 2.6.1 Insignificant Space Handling
         insignificantSpaceHandling(&u_str);
 
-        utl::Unicode::UTF32ToUTF8(u_str, out);
+        utl::utf32_to_utf8(u_str, out);
         return true;
     }
 

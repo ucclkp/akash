@@ -8,7 +8,7 @@
 
 #include <algorithm>
 
-#include "utils/convert.h"
+#include "utils/strings/int_conv.hpp"
 
 #define S11 7
 #define S12 12
@@ -90,7 +90,7 @@ namespace digest {
             if (val < 16) {
                 result.append("0");
             }
-            result.append(utl::toString8Hex(val));
+            result.append(utl::itos8(val, 16));
         }
 
         return result;
@@ -118,7 +118,7 @@ namespace digest {
             if (val < 16) {
                 result.append("0");
             }
-            result.append(utl::toString8Hex(val));
+            result.append(utl::itos8(val, 16));
         }
 
         return result;

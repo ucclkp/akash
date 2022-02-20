@@ -15,7 +15,7 @@
 #pragma comment(lib, "crypt32.lib")
 
 #include "utils/log.h"
-#include "utils/string_utils.h"
+#include "utils/strings/string_utils.hpp"
 
 #include "akash/ldap/ldap_matcher.h"
 #include "akash/security/cert/x509_parser.h"
@@ -35,7 +35,7 @@ namespace cert {
             if (f.path().extension().u16string() != u".cert") {
                 continue;
             }
-            if (!utl::ascii::startWith(f.path().filename().u16string(), u"X509-")) {
+            if (!utl::startWith(f.path().filename().u16string(), u"X509-")) {
                 continue;
             }
 

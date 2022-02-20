@@ -8,7 +8,9 @@
 #define AKASH_TLS_TLS_COMMON_H_
 
 #include <cassert>
+#include <cmath>
 #include <cstdint>
+#include <string>
 #include <vector>
 
 

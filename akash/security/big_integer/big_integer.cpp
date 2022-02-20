@@ -3,7 +3,7 @@
 #include <random>
 
 #include "utils/log.h"
-#include "utils/number.hpp"
+#include "utils/numbers.hpp"
 
 #define MP_WARRAY  65536
 
@@ -414,7 +414,7 @@ namespace utl {
     BigInteger BigInteger::invmod(const BigInteger& rhs) const {
         BigInteger tmp;
         if (!invmodItl(int_, rhs.int_, &tmp.int_)) {
-            CHECK(false);
+            ubassert(false);
         }
         return tmp;
     }
@@ -1723,13 +1723,13 @@ namespace utl {
         const IntArray& g, const IntArray& x, const IntArray& p, IntArray* y)
     {
         if (p.is_minus_) {
-            CHECK(false);
+            uthrow("");
             return;
         }
         if (x.is_minus_) {
             IntArray tmpG;
             if (!invmodItl(g, p, &tmpG)) {
-                CHECK(false);
+                uthrow("");
                 return;
             }
 
@@ -1762,7 +1762,7 @@ namespace utl {
         const IntArray& a, const IntArray& b, IntArray* c, IntArray* d)
     {
         if (b.isZero()) {
-            CHECK(false);
+            uthrow("");
             return;
         }
 
@@ -2006,7 +2006,7 @@ namespace utl {
 
     void BigInteger::divdItl(const IntArray& a, Digit b, IntArray* c, Digit* d) {
         if (b == 0) {
-            CHECK(false);
+            uthrow("");
             return;
         }
 
@@ -2058,7 +2058,7 @@ namespace utl {
 
     void BigInteger::rootdItl(IntArray& a, Digit b, IntArray* c) {
         if ((b & 1) == 0 && a.is_minus_) {
-            CHECK(false);
+            uthrow("");
             return;
         }
 
@@ -2277,7 +2277,7 @@ namespace utl {
     void BigInteger::montgomerySetup(const IntArray& n, Digit* rho) {
         Digit b = n.buf_[0];
         if ((b & 1) == 0) {
-            CHECK(false);
+            uthrow("");
             return;
         }
 
@@ -2572,7 +2572,7 @@ namespace utl {
 
     void BigInteger::readFromStringItl(const std::string& str, int radix, IntArray* a) {
         if (radix < 2 || radix > 64) {
-            CHECK(false);
+            uthrow("");
             return;
         }
 
@@ -2607,7 +2607,7 @@ namespace utl {
             }
 
             if (!hit) {
-                CHECK(false);
+                uthrow("");
             }
 
             if (j < radix) {
@@ -2625,7 +2625,7 @@ namespace utl {
 
     void BigInteger::toStringItl(const IntArray& a, int radix, std::string* str) {
         if (radix < 2 || radix > 64) {
-            CHECK(false);
+            uthrow("");
             return;
         }
         if (a.isZero()) {
@@ -2745,7 +2745,7 @@ namespace utl {
 
     bool BigInteger::invmodItl(const IntArray& a, const IntArray& b, IntArray* c) {
         if (b.is_minus_ || b.isZero() || a.isZero()) {
-            CHECK(false);
+            uthrow("");
             return false;
         }
         if (b.isOdd()) {

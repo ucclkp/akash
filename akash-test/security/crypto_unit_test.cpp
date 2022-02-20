@@ -76,7 +76,7 @@ namespace test {
         crypto::AES::decrypt(cipher, plain, key, sizeof(key));
 
         for (int i = 0; i < 16; ++i) {
-            DCHECK(plain[i] == input[i]);
+            ubassert(plain[i] == input[i]);
         }
 
         return 0;
@@ -132,7 +132,7 @@ namespace test {
         result.toString(16, &out);
         std::transform(out.begin(), out.end(), out.begin(), ::tolower);
 
-        DCHECK(swapHexStrBytes("4a5d9d5ba4ce2de1728e3bf480350f25e07e21c947d19e3376f09b3c1e161742") == out);
+        ubassert(swapHexStrBytes("4a5d9d5ba4ce2de1728e3bf480350f25e07e21c947d19e3376f09b3c1e161742") == out);
     }
 
     void TEST_ECDP_X448() {
@@ -159,7 +159,7 @@ namespace test {
         result.toString(16, &out);
         std::transform(out.begin(), out.end(), out.begin(), ::tolower);
 
-        DCHECK(swapHexStrBytes("ce3e4ff95a60dc6697da1db1d85e6afbdf79b50a2412d7546d5f239f"
+        ubassert(swapHexStrBytes("ce3e4ff95a60dc6697da1db1d85e6afbdf79b50a2412d7546d5f239f"
             "e14fbaadeb445fc66a01b0779d98223961111e21766282f73dd96b6f") == out);
     }
 
@@ -172,9 +172,9 @@ namespace test {
             crypto::GCM::GCM_AE(
                 K.data(), K.length(), IV.data(), IV.length(),
                 nullptr, 0, nullptr, 0, nullptr, T, sizeof T);
-            DCHECK(getBytesStr(T, sizeof T) == "8e2ad721f9455f74d8b53d3141f27e8e");
+            ubassert(getBytesStr(T, sizeof T) == "8e2ad721f9455f74d8b53d3141f27e8e");
 
-            DCHECK(crypto::GCM::GCM_AD(
+            ubassert(crypto::GCM::GCM_AD(
                 K.data(), K.length(), IV.data(), IV.length(),
                 nullptr, 0, nullptr, 0, T, sizeof T, nullptr));
         }
@@ -187,10 +187,10 @@ namespace test {
             crypto::GCM::GCM_AE(
                 K.data(), K.length(), IV.data(), IV.length(),
                 nullptr, 0, nullptr, 0, nullptr, T, sizeof T);
-            DCHECK(getBytesStr(T, sizeof T) == "250327c674aaf477aef2675748cf6971");
+            ubassert(getBytesStr(T, sizeof T) == "250327c674aaf477aef2675748cf6971");
 
             stringu8 P;
-            DCHECK(crypto::GCM::GCM_AD(
+            ubassert(crypto::GCM::GCM_AD(
                 K.data(), K.length(), IV.data(), IV.length(),
                 nullptr, 0, nullptr, 0, T, sizeof T, nullptr));
         }
@@ -203,10 +203,10 @@ namespace test {
             crypto::GCM::GCM_AE(
                 K.data(), K.length(), IV.data(), IV.length(),
                 nullptr, 0, nullptr, 0, nullptr, T, sizeof T);
-            DCHECK(getBytesStr(T, sizeof T) == "01eaee77");
+            ubassert(getBytesStr(T, sizeof T) == "01eaee77");
 
             stringu8 P;
-            DCHECK(crypto::GCM::GCM_AD(
+            ubassert(crypto::GCM::GCM_AD(
                 K.data(), K.length(), IV.data(), IV.length(),
                 nullptr, 0, nullptr, 0, T, sizeof T, nullptr));
         }
@@ -220,9 +220,9 @@ namespace test {
             crypto::GCM::GCM_AE(
                 K.data(), K.length(), IV.data(), IV.length(),
                 nullptr, 0, A.data(), A.length(), nullptr, T, sizeof T);
-            DCHECK(getBytesStr(T, sizeof T) == "209fcc8d3675ed938e9c7166709dd946");
+            ubassert(getBytesStr(T, sizeof T) == "209fcc8d3675ed938e9c7166709dd946");
 
-            DCHECK(crypto::GCM::GCM_AD(
+            ubassert(crypto::GCM::GCM_AD(
                 K.data(), K.length(), IV.data(), IV.length(),
                 nullptr, 0, A.data(), A.length(), T, sizeof T, nullptr));
         }
@@ -237,14 +237,14 @@ namespace test {
             crypto::GCM::GCM_AE(
                 K.data(), K.length(), IV.data(), IV.length(),
                 P.data(), P.length(), nullptr, 0, &*C.begin(), T, sizeof T);
-            DCHECK(getBytesStr(C.data(), P.length()) == "2ccda4a5415cb91e135c2a0f78c9b2fd");
-            DCHECK(getBytesStr(T, sizeof T) == "b36d1df9b9d5e596f83e8b7f52971cb3");
+            ubassert(getBytesStr(C.data(), P.length()) == "2ccda4a5415cb91e135c2a0f78c9b2fd");
+            ubassert(getBytesStr(T, sizeof T) == "b36d1df9b9d5e596f83e8b7f52971cb3");
 
             stringu8 _P(C.length(), 0);
-            DCHECK(crypto::GCM::GCM_AD(
+            ubassert(crypto::GCM::GCM_AD(
                 K.data(), K.length(), IV.data(), IV.length(),
                 C.data(), C.length(), nullptr, 0, T, sizeof T, &*_P.begin()));
-            DCHECK(_P == P);
+            ubassert(_P == P);
         }
 
         {
@@ -263,14 +263,14 @@ namespace test {
             crypto::GCM::GCM_AE(
                 K.data(), K.length(), IV.data(), IV.length(),
                 P.data(), P.length(), A.data(), A.length(), &*C.begin(), T, sizeof T);
-            DCHECK(getBytesStr(C.data(), P.length()) == "a9585fbd04deab91dc70563e2c");
-            DCHECK(getBytesStr(T, sizeof T) == "c77dbf78cecc6bbb1881950a3a6c3d");
+            ubassert(getBytesStr(C.data(), P.length()) == "a9585fbd04deab91dc70563e2c");
+            ubassert(getBytesStr(T, sizeof T) == "c77dbf78cecc6bbb1881950a3a6c3d");
 
             stringu8 _P(C.length(), 0);
-            DCHECK(crypto::GCM::GCM_AD(
+            ubassert(crypto::GCM::GCM_AD(
                 K.data(), K.length(), IV.data(), IV.length(),
                 C.data(), C.length(), A.data(), A.length(), T, sizeof T, &*_P.begin()));
-            DCHECK(_P == P);
+            ubassert(_P == P);
         }
 
         {
@@ -281,10 +281,10 @@ namespace test {
             crypto::GCM::GCM_AE(
                 K.data(), K.length(), IV.data(), IV.length(),
                 nullptr, 0, nullptr, 0, nullptr, T, sizeof T);
-            DCHECK(getBytesStr(T, sizeof T) == "f149e2b5f0adaa9842ca5f45b768a8fc");
+            ubassert(getBytesStr(T, sizeof T) == "f149e2b5f0adaa9842ca5f45b768a8fc");
 
             stringu8 P;
-            DCHECK(crypto::GCM::GCM_AD(
+            ubassert(crypto::GCM::GCM_AD(
                 K.data(), K.length(), IV.data(), IV.length(),
                 nullptr, 0, nullptr, 0, T, sizeof T, nullptr));
         }
@@ -305,12 +305,12 @@ namespace test {
             crypto::GCM::GCM_AE(
                 K.data(), K.length(), IV.data(), IV.length(),
                 P.data(), P.length(), A.data(), A.length(), &*C.begin(), T, sizeof T);
-            DCHECK(getBytesStr(C.data(), C.length())
+            ubassert(getBytesStr(C.data(), C.length())
                 == "f2ddf592fe3789008d022557c6436acb471700de1fc5a8dd8fa4c315a2ae8e4c");
-            DCHECK(getBytesStr(T, sizeof T) == "eb67fb25cc6eabccea2fe4f150");
+            ubassert(getBytesStr(T, sizeof T) == "eb67fb25cc6eabccea2fe4f150");
 
             stringu8 _P(C.length(), 0);
-            DCHECK(crypto::GCM::GCM_AD(
+            ubassert(crypto::GCM::GCM_AD(
                 K.data(), K.length(), IV.data(), IV.length(),
                 C.data(), C.length(), A.data(), A.length(), T, sizeof T, &*_P.begin()));
         }
@@ -323,9 +323,9 @@ namespace test {
             crypto::GCM::GCM_AE(
                 K.data(), K.length(), IV.data(), IV.length(),
                 nullptr, 0, nullptr, 0, nullptr, T, sizeof T);
-            DCHECK(getBytesStr(T, sizeof T) == "bdc1ac884d332457a1d2664f168c76f0");
+            ubassert(getBytesStr(T, sizeof T) == "bdc1ac884d332457a1d2664f168c76f0");
 
-            DCHECK(crypto::GCM::GCM_AD(
+            ubassert(crypto::GCM::GCM_AD(
                 K.data(), K.length(), IV.data(), IV.length(),
                 nullptr, 0, nullptr, 0, T, sizeof T, nullptr));
         }
@@ -347,13 +347,13 @@ namespace test {
             crypto::GCM::GCM_AE(
                 K.data(), K.length(), IV.data(), IV.length(),
                 P.data(), P.length(), A.data(), A.length(), &*C.begin(), T, sizeof T);
-            DCHECK(getBytesStr(C.data(), C.length())
+            ubassert(getBytesStr(C.data(), C.length())
                 == "c366146de8b58d3cce004c62a60b24bca3814d3d11ded76bb9f7d47"
                 "c41191b7e3a7444700bd93fefdf54252cb7cf6041038ca8");
-            DCHECK(getBytesStr(T, sizeof T) == "5016d92a");
+            ubassert(getBytesStr(T, sizeof T) == "5016d92a");
 
             stringu8 _P(C.length(), 0);
-            DCHECK(crypto::GCM::GCM_AD(
+            ubassert(crypto::GCM::GCM_AD(
                 K.data(), K.length(), IV.data(), IV.length(),
                 C.data(), C.length(), A.data(), A.length(), T, sizeof T, &*_P.begin()));
         }

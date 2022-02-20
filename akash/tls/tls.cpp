@@ -260,19 +260,19 @@ namespace tls {
         text.fragment = client_hello;
 
         if (!record_layer_.connect(host_)) {
-            DCHECK(false);
+            ubassert(false);
             return;
         }
 
         if (!record_layer_.sendFragment(text)) {
-            DCHECK(false);
+            ubassert(false);
             return;
         }
 
         TLSRecordLayer::TLSPlaintext out;
         for (;;) {
             if (!record_layer_.recvFragment(&out)) {
-                DCHECK(false);
+                ubassert(false);
                 break;
             }
             if (out.type != ContentType::ChangeCipherSpec) {

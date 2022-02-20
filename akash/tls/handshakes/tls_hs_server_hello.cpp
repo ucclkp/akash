@@ -29,7 +29,7 @@ namespace tls {
                 0xC2, 0xA2, 0x11, 0x16, 0x7A, 0xBB, 0x8C, 0x5E, 0x07, 0x9E, 0x09, 0xE2, 0xC8, 0xA8, 0x33, 0x9C
             };
             if (std::memcmp(random, hrr_token, 32) == 0) {
-                DCHECK(false);
+                ubassert(false);
                 return false;
             }
         }
@@ -45,7 +45,7 @@ namespace tls {
             uint8_t cs0, cs1;
             READ_STREAM(cs0, 1);
             READ_STREAM(cs1, 1);
-            DCHECK(cs0 == 0x13 && cs1 == 0x01);
+            ubassert(cs0 == 0x13 && cs1 == 0x01);
         }
 
         READ_STREAM(legacy_compression_method, 1);
@@ -53,7 +53,7 @@ namespace tls {
         {
             PEEK_STREAM(char buf);
             if (buf == EOF) {
-                DCHECK(false);
+                ubassert(false);
                 return false;
             }
         }
@@ -90,7 +90,7 @@ namespace tls {
                 if (!ext::SupportedVersions::parse(s, &ver)) {
                     return false;
                 }
-                DCHECK(ver.major == 0x03 && ver.minor == 0x04);
+                ubassert(ver.major == 0x03 && ver.minor == 0x04);
                 has_sp_ver = true;
                 break;
             }
@@ -101,7 +101,7 @@ namespace tls {
                 if (!ext::KeyShare::parseSH(s, &entry)) {
                     return false;
                 }
-                DCHECK(entry.group == NamedGroup::X25519);
+                ubassert(entry.group == NamedGroup::X25519);
                 if (entry.group == NamedGroup::X25519) {
                     std::string U_bytes;
                     if (!ext::KeyShareEntry::parseX25519(s, &U_bytes)) {
@@ -130,7 +130,7 @@ namespace tls {
             }
         }
 
-        DCHECK(has_sp_ver);
+        ubassert(has_sp_ver);
         return true;
     }
 
